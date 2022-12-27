@@ -27,18 +27,18 @@ features matrices. Once the ratings are predicted, the related books are listed 
 recommendation for the particular user.
 
 # 3. Dataset (EDA)
-The ‘~/Ratings.csv’ is a file of shape (1149780, 3). The columns are ‘User-ID’, ‘ISBN’, and ‘Book-Rating’, 
+The ‘Ratings.csv’ is a file of shape (1149780, 3). The columns are ‘User-ID’, ‘ISBN’, and ‘Book-Rating’, 
 where ‘ISBN’ contains alphanumeric characters representing each book. Books are rated from 0 to 10 where 0 
 represents no rating. A large part of the data, i.e. 716109 rows contain 0 rating. There are 105283 unique users and
 340556 unique books. We dropped 0’s from the data and visualized the books that
 received a high number of ratings. The corresponding ‘ISBN’ numbers showed the
-information about these books from the ‘~/Books.csv’ file.
+information about these books from the ‘Books.csv’ file.
 Pre-processing was carried out prior to the matrix factorization algorithm. We removed 0
-ratings from the ‘~/Ratings.csv’ and split it into a train and a test set. The details of
+ratings from the ‘Ratings.csv’ and split it into a train and a test set. The details of
 this procedure can be found in train_test_split.ipynb.
 
 # 4. Methodology
-I. User Based Collaborative Filtering:
+## I. User Based Collaborative Filtering:
 In order to predict the missing ratings for the users in the test dataset, we wrote a
 function called rating(user_id, isbn, k) where the user_id is the id of the user
 whose rating we require, isbn is the id of the book whose rating we require, and k is the
@@ -50,9 +50,9 @@ missing rating.
 Note: The details of this function and examples related to it can be found in the Cosine
 Similarity.ipynb.
 
-# II. Item Based Collaborative Filtering:
+## II. Item Based Collaborative Filtering:
 This is one simplest method for finding out item-item similarity coefficient. The
-DataFrame containing the Ratings (‘~/Ratings.csv) was converted into a
+DataFrame containing the Ratings (‘Ratings.csv') was converted into a
 DataFrame representing a matrix of ‘User-ID’ and ‘ISBN’ by using the .pivot()
 function. The columns are named with ‘ISBN’ and the indices with ‘User-ID’. The
 matrix shown in the DataFrame was transposed and stored in a 2-D array.
@@ -62,17 +62,17 @@ with np.corrcoef().
 The indices of books (‘ISBN’) were stored in a list. Correlation of a book of interest to
 the rest of the books was carried out and the top most highly correlated books were
 presented with correlation coefficient >0.9. Information about these books were
-displayed from a DataFrame containing books (‘~/Books.csv’). This method is
+displayed from a DataFrame containing books (‘Books.csv’). This method is
 mostly applicable in a ‘cold start’ instance when the user rated just one or two books with
 non-zero rating. There was a memory issue when the correlation was conducted in the
 whole dataset and the result was stored in a 2-D array format. So, we sampled the rows
-from the DataFrame containing Ratings (‘~/Ratings.csv) and carried out the
+from the DataFrame containing Ratings (‘Ratings.csv) and carried out the
 analysis for highly correlated books to a book of interest. As a caveat, if the book does
 not receive a single rating, this function does not work. So, the book should receive at
 least one non-zero rating in order for this function to perform. The details of this process
 is found in truncSVD_books.ipynb.
 
-# III. Matrix Factorization:
+## III. Matrix Factorization:
 The function that calculates the matrix factorization of a given matrix is called
 MF(M,k,max_it,lambda,mu). This can be found in both the MF
 evaluation.ipynb and MF validation.ipynb. This takes in the required matrix
