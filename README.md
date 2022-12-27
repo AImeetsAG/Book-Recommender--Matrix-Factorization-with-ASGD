@@ -84,9 +84,9 @@ time. At the end, we chose not to use any scheduler.
 For hyperparameter tuning, we took the ratings of the 500 users that rated the
 most number of books and sampled 20% of that data for validation. Then we changed
 the ratings from the validation to 0 and combined everything to create a matrix. Then we
-tested our matrix factorization prediction on the validation for the different values of k:
-[5,10,20,100,200], lambda:[0.01, 0.1,0.5], mu:[0.01,0.1,0.5] . We
-concluded that k=10, mu=0.1, lambda=0.1 were the best parameters. Details of
+tested our matrix factorization prediction on the validation for the different values of $k$:
+[5,10,20,100,200], $\lambda:[0.01, 0.1,0.5]$, $\mu:[0.01,0.1,0.5]$ . We
+concluded that $k=10$, $\mu=0.1$, $\lambda=0.1$ were the best parameters. Details of
 this procedure can be found in the MF validation.ipynb.
 For inference, we realized that predicting all the test values at once was not
 feasible. We observed that there were about 20000 unique users in the test dataset. We
