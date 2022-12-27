@@ -1,5 +1,5 @@
 # Books Recommendation System using Collaborative Filtering
-Abhinav Chand, Bijan GURUNG, Quynh Do
+[Abhinav Chand]([https://duckduckgo.com](https://github.com/AImeetsAG)), Bijan Gurung, Quynh Do
 
 # 1. Background
 Recommendation system started to gain traction after online shopping or e-commerce took
@@ -27,10 +27,9 @@ features matrices. Once the ratings are predicted, the related books are listed 
 recommendation for the particular user.
 
 # 3. Dataset (EDA)
-The ‘~/Ratings.csv’ is a file of shape (1149780, 3). The columns are ‘User-ID’,
-‘ISBN’, and ‘Book-Rating’, where ‘ISBN’ contains alphanumeric characters
-representing each book. Books are rated from 0 to 10 where 0 represents no rating. A large
-part of the data, i.e. 716109 rows contain 0 rating. There are 105283 unique users and
+The ‘~/Ratings.csv’ is a file of shape (1149780, 3). The columns are ‘User-ID’, ‘ISBN’, and ‘Book-Rating’, 
+where ‘ISBN’ contains alphanumeric characters representing each book. Books are rated from 0 to 10 where 0 
+represents no rating. A large part of the data, i.e. 716109 rows contain 0 rating. There are 105283 unique users and
 340556 unique books. We dropped 0’s from the data and visualized the books that
 received a high number of ratings. The corresponding ‘ISBN’ numbers showed the
 information about these books from the ‘~/Books.csv’ file.
