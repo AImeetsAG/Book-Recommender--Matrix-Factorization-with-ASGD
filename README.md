@@ -74,7 +74,7 @@ is found in truncSVD_books.ipynb.
 
 ## III. Matrix Factorization:
 The function that calculates the matrix factorization of a given matrix is called
-MF(M,k,max_it,lambda,mu). This can be found in both the MF
+$MF(M,k,max_it,\lambda,\mu)$. This can be found in both the MF
 evaluation.ipynb and MF validation.ipynb. This takes in the required matrix
 M, the number of latent features k, maximum number of iterations max_it,
 regularization parameter for U called lambda, and the regularization parameter for V
