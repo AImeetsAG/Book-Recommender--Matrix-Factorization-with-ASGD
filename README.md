@@ -1,7 +1,7 @@
-#Books Recommendation System using Collaborative Filtering
-Abhinav Chand, Quynh Do and Bijan GURUNG
+# Books Recommendation System using Collaborative Filtering
+Abhinav Chand, Bijan GURUNG, Quynh Do
 
-1. Background
+# 1. Background
 Recommendation system started to gain traction after online shopping or e-commerce took
 the center stage in marketing and a huge dataset started to become available in this field.
 Recommendation system relies on content-based filtering, collaborative filtering or the
@@ -14,7 +14,8 @@ information (timestamp, spatial data). We took the task of analyzing books rated
 (from Amazon) for our recommendation system. There are three different types of datasets,
 namely users data, books data, and ratings data (source:
 https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset).
-2. Motivation and Goal
+
+# 2. Motivation and Goal
 Thousands, if not millions of books are picked or purchased by clients or users everyday in
 the online shopping sites (e.g. Amazon). Users are requested to voluntarily rate the books
 and are also requested to provide some of their basic information such as preferences, age,
@@ -24,7 +25,8 @@ filtering in defining the latent features which will then be used to predict the
 existing or new users. Parameters’ tuning will be carried out for the appropriate model for
 features matrices. Once the ratings are predicted, the related books are listed for
 recommendation for the particular user.
-3. Dataset (EDA)
+
+# 3. Dataset (EDA)
 The ‘~/Ratings.csv’ is a file of shape (1149780, 3). The columns are ‘User-ID’,
 ‘ISBN’, and ‘Book-Rating’, where ‘ISBN’ contains alphanumeric characters
 representing each book. Books are rated from 0 to 10 where 0 represents no rating. A large
@@ -35,8 +37,8 @@ information about these books from the ‘~/Books.csv’ file.
 Pre-processing was carried out prior to the matrix factorization algorithm. We removed 0
 ratings from the ‘~/Ratings.csv’ and split it into a train and a test set. The details of
 this procedure can be found in train_test_split.ipynb.
-1
-4. Methodology
+
+# 4. Methodology
 I. User Based Collaborative Filtering:
 In order to predict the missing ratings for the users in the test dataset, we wrote a
 function called rating(user_id, isbn, k) where the user_id is the id of the user
@@ -48,7 +50,8 @@ ratings of the neighbors based on the similarity values. This is the predicted v
 missing rating.
 Note: The details of this function and examples related to it can be found in the Cosine
 Similarity.ipynb.
-II. Item Based Collaborative Filtering:
+
+# II. Item Based Collaborative Filtering:
 This is one simplest method for finding out item-item similarity coefficient. The
 DataFrame containing the Ratings (‘~/Ratings.csv) was converted into a
 DataFrame representing a matrix of ‘User-ID’ and ‘ISBN’ by using the .pivot()
@@ -69,12 +72,12 @@ analysis for highly correlated books to a book of interest. As a caveat, if the 
 not receive a single rating, this function does not work. So, the book should receive at
 least one non-zero rating in order for this function to perform. The details of this process
 is found in truncSVD_books.ipynb.
-III. Matrix Factorization:
+
+# III. Matrix Factorization:
 The function that calculates the matrix factorization of a given matrix is called
 MF(M,k,max_it,lambda,mu). This can be found in both the MF
 evaluation.ipynb and MF validation.ipynb. This takes in the required matrix
 M, the number of latent features k, maximum number of iterations max_it,
-2
 regularization parameter for U called lambda, and the regularization parameter for V
 called mu. Our algorithm uses PyTorch and optimizes the gradient descent using ADAM.
 We experimented with the various schedulers in Pytorch, but it reduced convergence
@@ -95,7 +98,7 @@ then performed matrix factorization on this combined matrix and calculated the M
 the required entries. The details of this procedure can be found in the MF
 evaluation.ipynb.
 
-#5. Results and Discussion
+# 5. Results and Discussion
 The RMSE from the matrix factorization model was 2.7. We realized that our matrix factorization
 algorithm takes a very large number of iterations to converge. If we had enough time and
 computing power, we could run longer iterations and improve the result. We also believe that we
