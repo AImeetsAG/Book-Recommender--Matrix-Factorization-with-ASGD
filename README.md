@@ -1,5 +1,5 @@
 # Books Recommendation System using Collaborative Filtering
-[Abhinav Chand]([https://duckduckgo.com](https://github.com/AImeetsAG)), Bijan Gurung, Quynh Do
+[Abhinav Chand](https://github.com/AImeetsAG), Bijan Gurung, Quynh Do
 
 # 1. Background
 Recommendation system started to gain traction after online shopping or e-commerce took
