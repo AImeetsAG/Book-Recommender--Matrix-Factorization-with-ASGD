@@ -1,0 +1,6 @@
+Guide to notebooks:1. Books_EDA contains the EDA part.2. train_test_split.ipynb contains the train test split part.3. Cosine Similarity.ipynb contains the user based collaborative filtering part.4. truncSVD_books.ipynb contains the item based collaborative filtering part.
+5. MF.ipynb contains the initial successful implementation of the matrix factorization algorithms and  some examples5. MF_validation.ipynb contains the hyperparameter tuning for matrix factorization.6. MF_evaluation_complete.ipynb contains the inference part with RMSE result.
+7. MF evaluation_running.ipynb contains the currently running notebook with larger batch sizes and average RMSE of 2.1. (It was scheduled to run for iterations but it was not completed before the deadline)Guide to csv files:1. Books.csv contains the information about books.2. Users.csv contains the information about users.3. Ratings.csv contains the ratings given by the users.4. topredict.csv contains the test data ratings.5. trainwithzerostopredict.csv contains the train and test data with the ratings of test data entered  as 0.6. trainwithoutzeros.csv contains the entire train and test data. (This was obtained from the Ratings.csv by removing all the 0 ratings. 
+
+Not so important file:
+1. Matrix generation.ipynb contains the procedure to generate the sparse matrix for the entire dataset.
