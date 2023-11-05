@@ -1,5 +1,5 @@
 <img
-  src="/images/book_recommend.jpg"
+  src="/images/book_recommender.jpeg"
   title="Recommender"
   style="display: inline-block; margin: 0 auto; max-width: 100px">
 
