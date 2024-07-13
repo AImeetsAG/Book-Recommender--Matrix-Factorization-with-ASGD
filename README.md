@@ -1,3 +1,9 @@
+<img
+  src="/images/book_recommender.jpeg"
+  title="Recommender"
+  style="display: inline-block; margin: 0 auto; max-width: 100px">
+
+
 # Books Recommendation System using Collaborative Filtering
 [Abhinav Chand](https://github.com/AImeetsAG), Bijan Gurung, Quynh Do
 
